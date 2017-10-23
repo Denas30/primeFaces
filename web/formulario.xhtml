@@ -12,22 +12,28 @@
         
         <h:form>
             <p:panelGrid columns="2">
+                  <!--Input del nombre de la persona-->
                 <h:outputText value="Nombre"/>
             <p:inputText value="#{form.nombre}" required="true"/>
-                
+                  
+                <!--input de password debe colocar una clave valida, se medira el nivel de la clave si es debil o fuerte-->
             <h:outputText value="Clave"/>
             <p:password value="#{form.clave}" required="true" feedback="true" promptLabel="Ingrese su clave" weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte"/>
              
+                 <!--Debe elegir una ciudad-->
             <h:outputText value="Ciudad"/>
             <p:selectOneMenu value="#{form.ciudad}">
                 <f:selectItems value="#{form.ciudades}"/>
            </p:selectOneMenu>
+                  
+                  <!--checkbox si es femenino o masculino-->
             <h:outputText value="Sexo"/>
             <p:selectOneRadio value="#{form.sexo}" required="true">
                 <f:selectItem itemLabel="F" itemValue="femelino"/>
                 <f:selectItem itemLabel="M" itemValue="masculino"/>
             </p:selectOneRadio>
-            
+                  
+            <!--checkbox de seleccion de lo que le gusta hacer puede seleccionar todas los opciones-->
             <h:outputText value="Hobbie"/>
             <p:selectManyCheckbox value="#{form.hobbie}">
                 <f:selectItem itemLabel="gimnasio" itemValue="gimnasio"/>
